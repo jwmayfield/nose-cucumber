@@ -1,4 +1,4 @@
-nose-cucumber is a `nose`_ plugin for running `cucumber` tests via nose.
+nose-cucumber is a `nose`_ plugin for running `cucumber`_ tests via nose.
 
 .. _nose: http://www.somethingaboutorange.com/mrl/projects/nose/
 .. _cucumber: http://cukes.info/
