@@ -18,13 +18,20 @@ class Cucumber(Plugin):
         self.cucumber_dirs = []
 
     def wantDirectory(self, dirpath):
+        if dirpath.endswith('features'):
+            dirpath = dirpath.rsplit('/', 1)[0]
+            if dirpath not in self.cucumber_dirs:
+                self.cucumber_dirs.append(dirpath)
+            return True
         possible = path.join(dirpath, 'features')
         if path.exists(possible):
-            self.cucumber_dirs.append(dirpath)
+            if dirpath not in self.cucumber_dirs:
+                self.cucumber_dirs.append(dirpath)
             return True
         return False
 
     def report(self, stream):
+        print >> stream, self.cucumber_dirs
         for d in self.cucumber_dirs:
             cmd = ['cucumber', d]
 
