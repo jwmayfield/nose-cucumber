@@ -33,7 +33,7 @@ class Cucumber(Plugin):
     def report(self, stream):
         print >> stream, self.cucumber_dirs
         for d in self.cucumber_dirs:
-            cmd = ['cucumber', d]
+            cmd = ['cucumber', '--color', d]
 
             p = Popen(
                 cmd, env={'PATH': environ.get('PATH', None)},
