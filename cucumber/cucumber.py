@@ -31,7 +31,6 @@ class Cucumber(Plugin):
         return False
 
     def report(self, stream):
-        print >> stream, self.cucumber_dirs
         for d in self.cucumber_dirs:
             cmd = ['cucumber', '--color', d]
 
